@@ -21,7 +21,7 @@ const nextMatch: Match = {
   time: '20:00',
   home: 'Wolves FC',
   away: 'Real Madrid',
-  venue: 'Estadio Wolves Arena',
+  venue: 'Wolves Arena Stadium',
   competition: 'LaLiga',
   isHome: true,
 }
@@ -44,9 +44,9 @@ export function MatchHighlights() {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold">Partidos</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold">Matches</h2>
           <Link to="/matches" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
-            Ver todos <ArrowRight className="w-4 h-4" />
+            View all <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
@@ -54,7 +54,7 @@ export function MatchHighlights() {
           <Card>
             <CardContent className="py-6">
               <div className="flex items-center justify-between mb-4">
-                <Badge variant="primary">PRÓXIMO PARTIDO</Badge>
+                <Badge variant="primary">NEXT MATCH</Badge>
                 <span className="text-sm text-gray-500">{nextMatch.competition}</span>
               </div>
               <div className="flex items-center justify-between">
@@ -83,7 +83,7 @@ export function MatchHighlights() {
                 <Link to="/tickets">
                   <Button variant="primary" className="w-full gap-2">
                     <Ticket className="w-4 h-4" />
-                    Comprar Entradas
+                    Buy Tickets
                   </Button>
                 </Link>
               </div>
@@ -93,7 +93,7 @@ export function MatchHighlights() {
           <Card>
             <CardContent className="py-6">
               <div className="flex items-center justify-between mb-4">
-                <Badge variant="success">ÚLTIMO RESULTADO</Badge>
+                <Badge variant="success">LAST RESULT</Badge>
                 <span className="text-sm text-gray-500">{lastResult.competition}</span>
               </div>
               <div className="flex items-center justify-between">
@@ -114,7 +114,7 @@ export function MatchHighlights() {
                     </span>
                   </div>
                   <Badge variant={lastResult.homeScore! < lastResult.awayScore! ? 'success' : 'danger'} size="sm">
-                    Victoria
+                    Win
                   </Badge>
                 </div>
                 <div className="text-center">

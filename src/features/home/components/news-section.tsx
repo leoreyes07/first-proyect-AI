@@ -16,33 +16,33 @@ interface NewsItem {
 const news: NewsItem[] = [
   {
     id: '1',
-    title: 'Wolves FC firma victoria histórica en el Camp Nou',
-    excerpt: 'Con un gol en el minuto 89, el equipo logró una victoria que quedará grabada en la memoria de los aficionados.',
+    title: 'Wolves FC clinches historic victory at Camp Nou',
+    excerpt: 'A goal in the 89th minute secured a memorable victory that will live long in the memories of fans.',
     image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800',
     date: '10 Mar 2024',
-    category: 'Partido',
+    category: 'Match',
     readTime: 3,
-    author: 'Carlos Martínez',
+    author: 'Carlos Martinez',
   },
   {
     id: '2',
-    title: 'Nuevo refuerzo se une al primer equipo',
-    excerpt: 'El mediocampista internacional arrive a Wolves FC proveniente del FC Barcelona con un contrato de 4 años.',
+    title: 'New signing joins the first team',
+    excerpt: 'The international midfielder arrives from FC Barcelona on a 4-year contract.',
     image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800',
     date: '8 Mar 2024',
-    category: 'Fichajes',
+    category: 'Transfers',
     readTime: 4,
-    author: 'Laura Sánchez',
+    author: 'Laura Sanchez',
   },
   {
     id: '3',
-    title: 'El Wolves Arena acogera la final de Copa del Rey',
-    excerpt: 'El estadio de nuestra ciudad fue seleccionado para albergar la final de la competición nacional.',
+    title: 'Wolves Arena to host Copa del Rey Final',
+    excerpt: 'Our city stadium has been selected to host the national competition final.',
     image: 'https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800',
     date: '5 Mar 2024',
     category: 'Club',
     readTime: 2,
-    author: 'Pedro García',
+    author: 'Pedro Garcia',
   },
 ]
 
@@ -51,9 +51,9 @@ export function NewsSection() {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold">Últimas Noticias</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold">Latest News</h2>
           <Link to="/news" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
-            Ver todas <ArrowRight className="w-4 h-4" />
+            View all <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

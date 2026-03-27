@@ -10,19 +10,19 @@ const socialLinks = [
 
 const footerLinks = {
   club: [
-    { label: 'Historia', href: '/history' },
-    { label: 'Estadio', href: '/stadium' },
-    { label: 'Dirección', href: '/contact' },
+    { label: 'History', href: '/history' },
+    { label: 'Stadium', href: '/stadium' },
+    { label: 'Contact', href: '/contact' },
   ],
   fans: [
-    { label: 'Socios', href: '/membership' },
-    { label: 'Grupos', href: '/fan-groups' },
-    { label: 'Tienda', href: '/shop' },
+    { label: 'Membership', href: '/membership' },
+    { label: 'Fan Groups', href: '/fan-groups' },
+    { label: 'Shop', href: '/shop' },
   ],
   matches: [
-    { label: 'Entradas', href: '/tickets' },
-    { label: 'Calendario', href: '/matches' },
-    { label: 'Clasificación', href: '/standings' },
+    { label: 'Tickets', href: '/tickets' },
+    { label: 'Schedule', href: '/matches' },
+    { label: 'Standings', href: '/standings' },
   ],
 }
 
@@ -37,7 +37,7 @@ export function Footer() {
               <span className="text-xl font-heading font-bold">WOLVES FC</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
-              Club de fútbol profesional comprometido con la excelencia deportiva y el apoyo a nuestra comunidad.
+              Professional football club committed to sporting excellence and supporting our community.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">El Club</h4>
+            <h4 className="font-semibold mb-4">The Club</h4>
             <ul className="space-y-2">
               {footerLinks.club.map((link) => (
                 <li key={link.href}>
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Para Fans</h4>
+            <h4 className="font-semibold mb-4">For Fans</h4>
             <ul className="space-y-2">
               {footerLinks.fans.map((link) => (
                 <li key={link.href}>
@@ -82,15 +82,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Contacto</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>Estadio Wolves Arena, Calle Principal 123</span>
+                <span>Wolves Arena Stadium, Main Street 123</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+34 900 123 456</span>
+                <span>+1 900 123 456</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 flex-shrink-0" />
@@ -102,14 +102,14 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-dark-700 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © 2024 Wolves FC. Todos los derechos reservados.
+            © 2024 Wolves FC. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
-              Privacidad
+              Privacy
             </Link>
             <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
-              Términos
+              Terms
             </Link>
             <Link to="/cookies" className="text-gray-400 hover:text-white transition-colors">
               Cookies

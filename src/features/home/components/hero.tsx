@@ -12,21 +12,21 @@ export function Hero() {
       <div className="container mx-auto px-4 py-24 md:py-32 relative">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-            El orgullo de nuestra <span className="text-accent-400">ciudad</span>
+            The pride of our <span className="text-accent-400">city</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-100 mb-8 max-w-2xl">
-            Acompaña al Wolves FC en cada partido. Vive la emoción del fútbol desde las gradas del Estadio Wolves Arena.
+            Support Wolves FC at every match. Experience the thrill of football from the stands of Wolves Arena Stadium.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/tickets">
               <Button variant="secondary" size="lg" className="gap-2 bg-white text-primary-700 hover:bg-gray-100">
                 <Ticket className="w-5 h-5" />
-                Comprar Entradas
+                Buy Tickets
               </Button>
             </Link>
             <Link to="/team">
               <Button variant="outline" size="lg" className="gap-2 border-white text-white hover:bg-white/10">
-                Conocer Plantilla
+                Meet the Squad
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
@@ -34,10 +34,10 @@ export function Hero() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <StatCard icon={Trophy} value="12" label="Trofeos" />
-          <StatCard icon={Users} value="45K+" label="Socios" />
-          <StatCard icon={Calendar} value="38" label="Partidos/Temporada" />
-          <StatCard icon={Calendar} value="1905" label="Fundado" />
+          <StatCard icon={Trophy} value="12" label="Trophies" />
+          <StatCard icon={Users} value="45K+" label="Members" />
+          <StatCard icon={Calendar} value="38" label="Matches/Season" />
+          <StatCard icon={Calendar} value="1905" label="Founded" />
         </div>
       </div>
     </section>

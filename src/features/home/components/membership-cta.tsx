@@ -5,23 +5,23 @@ import { Button } from '@/components/ui'
 const benefits = [
   {
     icon: Ticket,
-    title: 'Entradas garantizadas',
-    description: 'Acceso prioritario a partidos y eventos exclusivos',
+    title: 'Guaranteed tickets',
+    description: 'Priority access to matches and exclusive events',
   },
   {
     icon: Users,
-    title: 'Comunidad',
-    description: 'Forma parte de los 45,000 socios wolves',
+    title: 'Community',
+    description: 'Join 45,000+ Wolves members',
   },
   {
     icon: Gift,
-    title: 'Descuentos exclusivos',
-    description: '20% de descuento en tienda oficial',
+    title: 'Exclusive discounts',
+    description: '20% off at official store',
   },
   {
     icon: Percent,
-    title: 'Ofertas especiales',
-    description: 'Promociones solo para socios',
+    title: 'Special offers',
+    description: 'Member-only promotions',
   },
 ]
 
@@ -32,10 +32,10 @@ export function MembershipCTA() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Conviértete en Socio
+              Become a Member
             </h2>
             <p className="text-primary-100 text-lg mb-6">
-              Únete a la familia Wolves y disfruta de beneficios exclusivos, acceso prioritario a entradas y mucho más.
+              Join the Wolves family and enjoy exclusive benefits, priority ticket access, and more.
             </p>
             <ul className="space-y-4 mb-8">
               {benefits.map((benefit) => (
@@ -52,17 +52,17 @@ export function MembershipCTA() {
             </ul>
             <Link to="/membership">
               <Button variant="secondary" size="lg" className="bg-white text-primary-700 hover:bg-gray-100">
-                Hazte Socio
+                Become a Member
               </Button>
             </Link>
           </div>
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold mb-4">Planes de Suscripción</h3>
+              <h3 className="text-2xl font-bold mb-4">Subscription Plans</h3>
               <div className="space-y-4">
-                <MembershipPlan name="Básico" price="49" features={['Entradas anticipadas', 'Descuento 10% en tienda']} />
-                <MembershipPlan name="Premium" price="99" features={['Todo lo de Básico', '20% descuento', 'Meet & greet']} popular />
-                <MembershipPlan name="VIP" price="199" features={['Todo lo de Premium', 'Acesso area VIP', 'Camiseta gratuita']} />
+                <MembershipPlan name="Basic" price="49" features={['Priority tickets', '10% off store']} />
+                <MembershipPlan name="Premium" price="99" features={['All Basic perks', '20% discount', 'Meet & greet']} popular />
+                <MembershipPlan name="VIP" price="199" features={['All Premium perks', 'VIP area access', 'Free jersey']} />
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ function MembershipPlan({ name, price, features, popular }: { name: string; pric
     <div className={`p-4 rounded-xl ${popular ? 'bg-primary-600 border-2 border-accent-400' : 'bg-white/10'}`}>
       <div className="flex items-center justify-between mb-2">
         <span className="font-semibold">{name}</span>
-        <span className="text-2xl font-bold">€{price}<span className="text-sm font-normal">/año</span></span>
+        <span className="text-2xl font-bold">${price}<span className="text-sm font-normal">/year</span></span>
       </div>
       <ul className="space-y-1">
         {features.map((feature) => (

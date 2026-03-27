@@ -5,11 +5,11 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui'
 
 const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/news', label: 'Noticias' },
-  { href: '/team', label: 'Plantilla' },
-  { href: '/matches', label: 'Partidos' },
-  { href: '/shop', label: 'Tienda' },
+  { href: '/', label: 'Home' },
+  { href: '/news', label: 'News' },
+  { href: '/team', label: 'Squad' },
+  { href: '/matches', label: 'Matches' },
+  { href: '/shop', label: 'Shop' },
 ]
 
 export function Header() {
@@ -46,7 +46,7 @@ export function Header() {
             <Link to="/tickets">
               <Button variant="primary" size="sm" className="gap-2">
                 <Ticket className="w-4 h-4" />
-                Entradas
+                Tickets
               </Button>
             </Link>
             <Link to="/shop">
@@ -88,7 +88,7 @@ export function Header() {
                 <Link to="/tickets" className="flex-1">
                   <Button variant="primary" className="w-full gap-2">
                     <Ticket className="w-4 h-4" />
-                    Entradas
+                    Tickets
                   </Button>
                 </Link>
                 <Link to="/shop">
