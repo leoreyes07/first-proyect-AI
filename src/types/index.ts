@@ -38,10 +38,22 @@ export interface NewsArticle {
   excerpt: string
   content: string
   image: string
+  gallery?: string[]
+  videoUrl?: string
   date: string
-  category: string
+  category: NewsCategory
   readTime: number
   author: string
+  authorAvatar?: string
+  tags?: string[]
+  featured?: boolean
+}
+
+export type NewsCategory = 'Match' | 'Transfers' | 'Club' | 'Interviews' | 'Academy' | 'Community'
+
+export interface NewsFilters {
+  category?: NewsCategory | 'All'
+  search?: string
 }
 
 export interface Product {

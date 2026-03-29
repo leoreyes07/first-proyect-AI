@@ -1,88 +1,88 @@
-# Wolves FC - Plan de Ejecución y Stack Técnico
+# Wolves FC - Execution Plan and Technical Stack
 
-## 1. Stack Tecnológico
+## 1. Technical Stack
 
 ### Core
-| Tecnología | Versión | Uso |
-|------------|---------|-----|
-| React | 18.x | Framework principal |
-| TypeScript | 5.x | Tipado estático |
-| Vite | 5.x | Build tool y dev server |
+| Technology | Version | Usage |
+|------------|---------|-------|
+| React | 18.x | Main framework |
+| TypeScript | 5.x | Static typing |
+| Vite | 5.x | Build tool and dev server |
 
 ### Styling & UI
-| Tecnología | Uso |
-|------------|-----|
+| Technology | Usage |
+|------------|-------|
 | Tailwind CSS | Utility-first CSS |
 | clsx / class-variance-authority | Conditional classes |
-| Lucide React | Iconos |
+| Lucide React | Icons |
 
 ### State & Data
-| Tecnología | Uso |
-|------------|-----|
+| Technology | Usage |
+|------------|-------|
 | TanStack Query | Server state, caching, sync |
 | Zustand | Client state management |
-| React Hook Form | Formularios |
-| Zod | Validación de schemas |
+| React Hook Form | Forms |
+| Zod | Schema validation |
 
 ### Routing & Navigation
-| Tecnología | Uso |
-|------------|-----|
+| Technology | Usage |
+|------------|-------|
 | React Router | SPA routing |
 
 ### Testing
-| Tecnología | Uso |
-|------------|-----|
+| Technology | Usage |
+|------------|-------|
 | Vitest | Unit/integration tests |
 | Testing Library | Component testing |
 | Playwright | E2E testing |
 
 ### Deployment
-| Tecnología | Uso |
-|------------|-----|
-| Vercel / Netlify | Hosting estático |
+| Technology | Usage |
+|------------|-------|
+| Vercel / Netlify | Static hosting |
 
 ---
 
-## 2. Estructura del Proyecto
+## 2. Project Structure
 
 ```plaintext
 src/
-├── assets/           # Imágenes, iconos, fuentes
-├── components/       # UI primitivas reutilizables
-│   └── ui/           # Componentes base (Button, Input, Modal, Card)
-├── features/         # Agrupación por dominio
+├── assets/           # Images, icons, fonts
+├── components/       # Reusable primitive UI components
+│   └── ui/           # Base components (Button, Input, Modal, Card)
+├── features/         # Domain-based grouping
 │   ├── home/
 │   ├── news/
 │   ├── players/
 │   ├── matches/
 │   ├── shop/
 │   └── ticketing/
-├── layouts/          # Estructuras de página
-├── pages/            # Vistas principales enrutables
-├── routes/           # Configuración de rutas
-├── services/         # Llamadas API y endpoints
-├── store/            # Estado global (Zustand)
-├── styles/           # Variables globales, tailwind config
-└── utils/            # Helpers (fechas, formateo, etc.)
+├── layouts/          # Page structures
+├── pages/            # Routable main views
+├── routes/           # Routing configuration
+├── services/         # API calls and endpoints
+├── store/            # Global state (Zustand)
+├── styles/           # Global variables, tailwind config
+└── utils/            # Helpers (dates, formatting, etc.)
 ```
 
 ---
 
-## 3. Fases de Ejecución
+## 3. Execution Phases
 
-### Fase 1: Setup y Configuración
-**Duración estimada:** 1-2 días
+### Phase 1: Setup and Configuration
+**Estimated duration:** 1-2 days
 
-- [ ] Inicializar proyecto con Vite + React + TypeScript
-- [ ] Configurar ESLint + Prettier
-- [ ] Configurar Tailwind CSS
-- [ ] Configurar path aliases (@/)
-- [ ] Configurar Vitest
-- [ ] Crear estructura de carpetas
-- [ ] Configurar Git hooks (husky, lint-staged)
+- [ ] Initialize project with Vite + React + TypeScript
+- [ ] Configure ESLint + Prettier
+- [ ] Configure Tailwind CSS
+- [ ] Configure path aliases (@/)
+- [ ] Configure Vitest
+- [ ] Create folder structure
+- [ ] Configure Git hooks (husky, lint-staged)
 
-### Fase 2: UI Primitives
-**Duración estimada:** 2-3 días
+### Phase 2: UI Primitives
+**Estimated duration:** 2-3 days
 
 - [ ] Button (variants: primary, secondary, ghost, outline)
 - [ ] Input (text, email, password, search)
@@ -93,27 +93,27 @@ src/
 - [ ] Avatar
 - [ ] Select / Dropdown
 
-### Fase 3: Layout System
-**Duración estimada:** 1 día
+### Phase 3: Layout System
+**Estimated duration:** 1 day
 
 - [ ] MainLayout (header, nav, footer)
-- [ ] AuthLayout (para páginas de autenticación)
-- [ ] Header con navegación principal
-- [ ] Footer con links y redes sociales
+- [ ] AuthLayout (for authentication pages)
+- [ ] Header with main navigation
+- [ ] Footer with links and social media
 - [ ] Responsive breakpoints
 
-### Fase 4: Home + Landing
-**Duración estimada:** 2-3 días
+### Phase 4: Home + Landing
+**Estimated duration:** 2-3 days
 
-- [ ] Hero section con CTA principal
-- [ ] Últimos resultados / próximo partido
-- [ ] News preview (últimas 3 noticias)
+- [ ] Hero section with main CTA
+- [ ] Latest results / next match
+- [ ] News preview (latest 3 news)
 - [ ] Stats highlights
 - [ ] Sponsors carousel
 - [ ] Call to action (tickets, membership)
 
-### Fase 5: News Module
-**Duración estimada:** 3-4 días
+### Phase 5: News Module
+**Estimated duration:** 3-4 days
 
 - [ ] News listing page
 - [ ] News card component
@@ -123,8 +123,8 @@ src/
 - [ ] Category filtering
 - [ ] Pagination
 
-### Fase 6: First Team (Roster)
-**Duración estimada:** 3-4 días
+### Phase 6: First Team (Roster)
+**Estimated duration:** 3-4 days
 
 - [ ] Roster listing page
 - [ ] Player card component
@@ -134,8 +134,8 @@ src/
 - [ ] Coaching staff section
 - [ ] Squad number sorting
 
-### Fase 7: Matches Module
-**Duración estimada:** 3-4 días
+### Phase 7: Matches Module
+**Estimated duration:** 3-4 days
 
 - [ ] Match schedule calendar
 - [ ] Match result cards
@@ -145,8 +145,8 @@ src/
 - [ ] Match statistics
 - [ ] Venue information
 
-### Fase 8: Shop (E-commerce)
-**Duración estimada:** 5-7 días
+### Phase 8: Shop (E-commerce)
+**Estimated duration:** 5-7 days
 
 - [ ] Product listing with filters
 - [ ] Product detail page
@@ -156,8 +156,8 @@ src/
 - [ ] Wishlist
 - [ ] Size guide
 
-### Fase 9: Ticketing
-**Duración estimada:** 4-5 días
+### Phase 9: Ticketing
+**Estimated duration:** 4-5 days
 
 - [ ] Match ticket selection
 - [ ] Stadium map / seat picker
@@ -167,8 +167,8 @@ src/
 - [ ] My tickets page
 - [ ] Ticket validation
 
-### Fase 10: Club, Academy, Fans
-**Duración estimada:** 4-5 días
+### Phase 10: Club, Academy, Fans
+**Estimated duration:** 4-5 days
 
 - [ ] Club history timeline
 - [ ] Honors / trophies display
@@ -179,8 +179,8 @@ src/
 - [ ] Membership tiers
 - [ ] Fan groups directory
 
-### Fase 11: Testing y Polish
-**Duración estimada:** 3-4 días
+### Phase 11: Testing and Polish
+**Estimated duration:** 3-4 days
 
 - [ ] Unit tests (critical paths)
 - [ ] Integration tests
@@ -190,8 +190,8 @@ src/
 - [ ] SEO optimization
 - [ ] Mobile testing
 
-### Fase 12: Deployment
-**Duración estimada:** 1 día
+### Phase 12: Deployment
+**Estimated duration:** 1 day
 
 - [ ] Environment configuration
 - [ ] CI/CD pipeline
@@ -201,28 +201,28 @@ src/
 
 ---
 
-## 4. Prioridades de Entrega
+## 4. Delivery Priorities
 
-### MVP (Mes 1)
+### MVP (Month 1)
 1. Setup + UI Primitives
 2. Layout System
 3. Home
 4. Matches (standings + schedule)
 5. News
 
-### Conversión (Mes 2)
+### Conversion (Month 2)
 1. Ticketing
 2. Shop
 3. Membership
 
-### Expansión (Mes 3)
+### Expansion (Month 3)
 1. First Team / Roster
 2. Club, Academy, Fans
 3. Testing + Polish
 
 ---
 
-## 5. Dependencias Principales
+## 5. Main Dependencies
 
 ```json
 {
@@ -255,17 +255,17 @@ src/
 
 ---
 
-## 6. Convenciones de Commit
+## 6. Commit Conventions
 
 ```bash
-# Formato
-<tipo>(<módulo>): descripción
+# Format
+<type>(<module>): description
 
-# Ejemplos
-feat(home): agregar hero section
-feat(matches): implementar standings
-fix(tickets): corregir validación de asientos
-chore(deps): actualizar react-query
-docs(readme): actualizar instrucciones
-test(players): agregar tests de filtrado
+# Examples
+feat(home): add hero section
+feat(matches): implement standings
+fix(tickets): correct seat validation
+chore(deps): update react-query
+docs(readme): update instructions
+test(players): add filtering tests
 ```

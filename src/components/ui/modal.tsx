@@ -8,11 +8,12 @@ export interface ModalProps {
   onClose: () => void
   title?: string
   children: ReactNode
-  size?: 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
   showCloseButton?: boolean
+  className?: string
 }
 
-export function Modal({ isOpen, onClose, title, children, size = 'md', showCloseButton = true }: ModalProps) {
+export function Modal({ isOpen, onClose, title, children, size = 'md', showCloseButton = true, className }: ModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -43,6 +44,7 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', showClose
     md: 'max-w-md',
     lg: 'max-w-lg',
     xl: 'max-w-xl',
+    full: 'max-w-full h-full',
   }
 
   return (
@@ -54,8 +56,9 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', showClose
       <div
         ref={contentRef}
         className={cn(
-          'w-full bg-white rounded-xl shadow-2xl transform transition-all',
-          sizes[size]
+          'w-full bg-white rounded-xl shadow-2xl transform transition-all overflow-hidden',
+          size === 'full' ? 'h-[90vh]' : sizes[size],
+          className
         )}
         role="dialog"
         aria-modal="true"
@@ -71,7 +74,7 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', showClose
             )}
           </div>
         )}
-        <div className="px-6 py-4">{children}</div>
+        <div className={cn('px-6 py-4', size === 'full' && 'h-full overflow-auto')}>{children}</div>
       </div>
     </div>
   )
