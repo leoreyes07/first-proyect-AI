@@ -238,7 +238,7 @@ export const newsArticles: NewsArticle[] = [
       <p>"A point away from home in Europe is always a good result," said manager Rodriguez. "But we know we can play much better in the second leg."</p>
       <p>The return fixture at Wolves Arena takes place next Thursday.</p>
     `,
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800',
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800',
     date: '2024-02-07',
     category: 'Match',
     readTime: 4,

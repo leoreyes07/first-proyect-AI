@@ -4,12 +4,18 @@ export interface Player {
   position: Position
   number: number
   nationality: string
+  nationalityFlag?: string
   birthDate: string
+  height: string
+  weight: string
   image: string
+  bio?: string
   stats?: PlayerStats
 }
 
 export type Position = 'GK' | 'DEF' | 'MID' | 'FWD'
+
+export type PositionGroup = 'Goalkeepers' | 'Defenders' | 'Midfielders' | 'Forwards'
 
 export interface PlayerStats {
   matches: number
@@ -17,6 +23,17 @@ export interface PlayerStats {
   assists: number
   yellowCards: number
   redCards: number
+  cleanSheets?: number
+}
+
+export interface Coach {
+  id: string
+  name: string
+  role: string
+  image: string
+  nationality: string
+  nationalityFlag?: string
+  bio?: string
 }
 
 export interface Match {
