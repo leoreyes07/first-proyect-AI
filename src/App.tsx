@@ -3,6 +3,8 @@ import { MainLayout } from './layouts/MainLayout'
 import { HomePage } from './pages/home'
 import { NewsPage, NewsDetailPage } from './pages/news'
 import { SquadPage, PlayerDetailPage } from './pages/squad'
+import { MatchesPage, MatchDetailPage } from './pages/matches'
+import { ShopPage, ProductDetailPage } from './pages/shop'
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
           <Route path="news/:id" element={<NewsDetailPage />} />
           <Route path="team" element={<SquadPage />} />
           <Route path="team/:id" element={<PlayerDetailPage />} />
-          <Route path="matches" element={<div className="p-8">Matches Page</div>} />
-          <Route path="shop" element={<div className="p-8">Shop Page</div>} />
+          <Route path="matches" element={<MatchesPage />} />
+          <Route path="matches/:id" element={<MatchDetailPage />} />
+          <Route path="shop" element={<ShopPage />} />
+          <Route path="shop/:id" element={<ProductDetailPage />} />
           <Route path="tickets" element={<div className="p-8">Tickets Page</div>} />
           <Route path="contact" element={<div className="p-8">Contact Page</div>} />
         </Route>

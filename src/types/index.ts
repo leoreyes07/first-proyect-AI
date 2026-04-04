@@ -44,9 +44,21 @@ export interface Match {
   awayTeam: string
   homeScore?: number
   awayScore?: number
+  homeTeamCrest?: string
+  awayTeamCrest?: string
   venue: string
   competition: string
+  round?: string
   status: 'upcoming' | 'live' | 'finished'
+  stats?: MatchStats
+}
+
+export interface MatchStats {
+  possession?: { home: number; away: number }
+  shots?: { home: number; away: number }
+  shotsOnTarget?: { home: number; away: number }
+  corners?: { home: number; away: number }
+  fouls?: { home: number; away: number }
 }
 
 export interface NewsArticle {
@@ -73,20 +85,37 @@ export interface NewsFilters {
   search?: string
 }
 
+export type ProductCategory = 'Kits' | 'Training' | 'Accessories' | 'Souvenirs' | 'Footwear'
+
 export interface Product {
   id: string
   name: string
   description: string
   price: number
+  originalPrice?: number
   image: string
-  category: string
+  images?: string[]
+  category: ProductCategory
   sizes?: string[]
+  colors?: string[]
   inStock: boolean
+  stockCount?: number
+  featured?: boolean
+  isNew?: boolean
+  discount?: number
+}
+
+export interface CartItem {
+  product: Product
+  quantity: number
+  selectedSize?: string
+  selectedColor?: string
 }
 
 export interface Standing {
   position: number
   team: string
+  teamCrest?: string
   played: number
   won: number
   drawn: number
@@ -95,6 +124,7 @@ export interface Standing {
   goalsAgainst: number
   goalDifference: number
   points: number
+  form?: ('W' | 'D' | 'L')[]
 }
 
 export interface Ticket {
