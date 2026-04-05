@@ -8,7 +8,7 @@ export const playerApiMapping: Record<string, string> = {
   'Michael Brown': 'Andrew Robertson',
   'Thomas Anderson': 'Marc-Andre ter Stegen',
   'Diego Costa': 'Lautaro Martinez',
-  'Oliver Smith': 'Kevin De Bruyne',
+  'Oliver Smith': 'Bruno Fernandes',
   'Ryan Taylor': 'Kieran Trippier',
   'Antonio Garcia': 'Luka Modric',
   'William Johnson': 'Phil Foden',
