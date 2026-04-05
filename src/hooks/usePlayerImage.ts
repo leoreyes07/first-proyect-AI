@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchPlayerImages, getBestImageUrl, type PlayerImageResult } from '@/services/playerImageService'
+import { playerApiMapping } from '@/data/player-mapping'
 
 interface UsePlayerImageResult {
   imageUrl: string | null
@@ -20,7 +21,8 @@ export function usePlayerImage(playerName: string, fallbackImage?: string): UseP
       setError(null)
 
       try {
-        const result: PlayerImageResult | null = await fetchPlayerImages(playerName)
+        const apiPlayerName = playerApiMapping[playerName] || playerName
+        const result: PlayerImageResult | null = await fetchPlayerImages(apiPlayerName)
         const apiImageUrl = getBestImageUrl(result)
 
         if (mounted) {
