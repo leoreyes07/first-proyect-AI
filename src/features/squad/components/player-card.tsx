@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Card, CardContent } from '@/components/ui'
 import type { Player } from '@/types'
+import { usePlayerImage } from '@/hooks/usePlayerImage'
 
 interface PlayerCardProps {
   player: Player
@@ -15,6 +16,7 @@ const positionColors: Record<string, string> = {
 }
 
 export function PlayerCard({ player, variant = 'default' }: PlayerCardProps) {
+  const { imageUrl } = usePlayerImage(player.name, player.image)
   const age = Math.floor(
     (new Date().getTime() - new Date(player.birthDate).getTime()) / (365.25 * 24 * 60 * 60 * 1000)
   )
@@ -25,7 +27,7 @@ export function PlayerCard({ player, variant = 'default' }: PlayerCardProps) {
         <Card className="flex items-center gap-4 p-4 transition-all hover:shadow-lg hover:-translate-y-1">
           <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
             <img
-              src={player.image}
+              src={imageUrl || player.image}
               alt={player.name}
               className="w-full h-full object-cover"
             />
@@ -52,7 +54,7 @@ export function PlayerCard({ player, variant = 'default' }: PlayerCardProps) {
       <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-2 group">
         <div className="relative h-64 bg-gradient-to-b from-gray-200 to-gray-100">
           <img
-            src={player.image}
+            src={imageUrl || player.image}
             alt={player.name}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />

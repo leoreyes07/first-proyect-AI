@@ -1,16 +1,19 @@
 import { Card, CardContent } from '@/components/ui'
 import type { Coach } from '@/types'
+import { usePlayerImage } from '@/hooks/usePlayerImage'
 
 interface CoachCardProps {
   coach: Coach
 }
 
 export function CoachCard({ coach }: CoachCardProps) {
+  const { imageUrl } = usePlayerImage(coach.name, coach.image)
+  
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
       <div className="h-48 bg-gradient-to-b from-gray-200 to-gray-100">
         <img
-          src={coach.image}
+          src={imageUrl || coach.image}
           alt={coach.name}
           className="w-full h-full object-cover"
         />

@@ -2,6 +2,8 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowLeft, Calendar, Ruler, Weight, Flag, Shirt, Trophy, UserPlus, Target } from 'lucide-react'
 import { Button, Card, CardContent, Badge } from '@/components/ui'
 import { getPlayerById, players } from '@/features/squad/data'
+import { usePlayerImage } from '@/hooks/usePlayerImage'
+import { PlayerImage } from '@/components/player-image'
 import { format } from 'date-fns'
 
 const positionColors: Record<string, string> = {
@@ -14,6 +16,7 @@ const positionColors: Record<string, string> = {
 export function PlayerDetailPage() {
   const { id } = useParams<{ id: string }>()
   const player = id ? getPlayerById(id) : undefined
+  const { imageUrl } = usePlayerImage(player?.name || '', player?.image)
 
   if (!player) {
     return <Navigate to="/team" replace />
@@ -40,7 +43,7 @@ export function PlayerDetailPage() {
           <div className="flex flex-col md:flex-row gap-8 items-end">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden shadow-2xl">
               <img
-                src={player.image}
+                src={imageUrl || player.image}
                 alt={player.name}
                 className="w-full h-full object-cover"
               />
@@ -196,8 +199,9 @@ export function PlayerDetailPage() {
                 <Link key={p.id} to={`/team/${p.id}`}>
                   <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
                     <div className="h-40 bg-gradient-to-b from-gray-200 to-gray-100">
-                      <img
-                        src={p.image}
+                      <PlayerImage
+                        name={p.name}
+                        fallbackImage={p.image}
                         alt={p.name}
                         className="w-full h-full object-cover"
                       />
