@@ -1,7 +1,5 @@
 import type { Product, ProductCategory } from '@/types'
-import { productImageMapping } from '@/data/product-mapping'
-
-const getProductImages = (id: string) => productImageMapping[id] || []
+import { getProductImages } from '@/data/product-mapping'
 
 export const products: Product[] = [
   {

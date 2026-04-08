@@ -61,7 +61,7 @@ export function MembershipCTA() {
               <h3 className="text-2xl font-bold mb-4">Subscription Plans</h3>
               <div className="space-y-4">
                 <MembershipPlan name="Basic" price="49" features={['Priority tickets', '10% off store']} />
-                <MembershipPlan name="Premium" price="99" features={['All Basic perks', '20% discount', 'Meet & greet']} popular />
+                <MembershipPlan name="Premium" price="99" features={['All Basic perks', '20% discount', 'Meet & greet']} />
                 <MembershipPlan name="VIP" price="199" features={['All Premium perks', 'VIP area access', 'Free jersey']} />
               </div>
             </div>
@@ -72,9 +72,9 @@ export function MembershipCTA() {
   )
 }
 
-function MembershipPlan({ name, price, features, popular }: { name: string; price: string; features: string[]; popular?: boolean }) {
+function MembershipPlan({ name, price, features }: { name: string; price: string; features: string[] }) {
   return (
-    <div className={`p-4 rounded-xl ${popular ? 'bg-primary-600 border-2 border-accent-400' : 'bg-white/10'}`}>
+    <div className="p-4 rounded-xl border-2 border-gray-200 bg-white/10 transition-all duration-300 hover:bg-[#0284C7] hover:border-orange-400 hover:scale-105 hover:shadow-lg">
       <div className="flex items-center justify-between mb-2">
         <span className="font-semibold">{name}</span>
         <span className="text-2xl font-bold">${price}<span className="text-sm font-normal">/year</span></span>
@@ -82,7 +82,7 @@ function MembershipPlan({ name, price, features, popular }: { name: string; pric
       <ul className="space-y-1">
         {features.map((feature) => (
           <li key={feature} className="text-sm text-primary-100 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-accent-400 rounded-full" />
+            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full" />
             {feature}
           </li>
         ))}

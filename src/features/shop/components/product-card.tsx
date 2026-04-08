@@ -90,7 +90,7 @@ export function ProductCard({ product, variant = 'default' }: ProductCardProps) 
             {product.name}
           </h3>
           
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <span className="text-xl font-bold text-primary-600">
               ${product.price.toFixed(2)}
             </span>
@@ -101,31 +101,10 @@ export function ProductCard({ product, variant = 'default' }: ProductCardProps) 
             )}
           </div>
 
-          {product.sizes && product.sizes.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-3">
-              {product.sizes.slice(0, 5).map((size) => (
-                <span
-                  key={size}
-                  className="px-2 py-0.5 text-xs bg-gray-100 rounded text-gray-600"
-                >
-                  {size}
-                </span>
-              ))}
-              {product.sizes.length > 5 && (
-                <span className="px-2 py-0.5 text-xs text-gray-400">
-                  +{product.sizes.length - 5}
-                </span>
-              )}
-            </div>
-          )}
-
           <Button
             className="w-full"
             variant={product.inStock ? 'primary' : 'outline'}
             disabled={!product.inStock}
-            onClick={(e) => {
-              e.preventDefault()
-            }}
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             {product.inStock ? 'Add to Cart' : 'Out of Stock'}
