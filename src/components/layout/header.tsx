@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Ticket, ShoppingBag, User } from 'lucide-react'
+import { Menu, X, Ticket, ShoppingBag, User, LogIn } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui'
+import { Modal } from '@/components/ui/modal'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -14,6 +15,8 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+  const authButtonRef = useRef<HTMLButtonElement>(null)
   const location = useLocation()
 
   return (
@@ -54,7 +57,14 @@ export function Header() {
                 <ShoppingBag className="w-5 h-5" />
               </Button>
             </Link>
-            <Button variant="ghost" size="sm" className="p-2">
+            <Button
+              ref={authButtonRef}
+              variant="ghost"
+              size="sm"
+              className="p-2"
+              onClick={() => setIsAuthModalOpen(true)}
+              aria-label="Account"
+            >
               <User className="w-5 h-5" />
             </Button>
           </div>
@@ -101,6 +111,26 @@ export function Header() {
           </div>
         )}
       </nav>
+
+      <Modal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} title="Welcome" size="sm">
+        <div className="flex flex-col gap-3 py-2">
+          <Link
+            to="/signin"
+            onClick={() => setIsAuthModalOpen(false)}
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+          >
+            <LogIn className="w-5 h-5" />
+            Sign In
+          </Link>
+          <Link
+            to="/signup"
+            onClick={() => setIsAuthModalOpen(false)}
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </Modal>
     </header>
   )
 }
