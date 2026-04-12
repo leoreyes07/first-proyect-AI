@@ -113,22 +113,26 @@ export function Header() {
       </nav>
 
       <Modal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} title="Welcome" size="sm">
-        <div className="flex flex-col gap-3 py-2">
-          <Link
-            to="/signin"
-            onClick={() => setIsAuthModalOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
-          >
-            <LogIn className="w-5 h-5" />
-            Sign In
-          </Link>
-          <Link
-            to="/signup"
-            onClick={() => setIsAuthModalOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 px-4 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-          >
-            Sign Up
-          </Link>
+        <div className="flex flex-col items-center gap-4 py-2">
+          <img src="/favicon.svg" alt="Wolves FC" className="w-16 h-16" />
+          <span className="text-2xl font-bold text-primary-600">WOLVES FC</span>
+          <div className="flex flex-col gap-3 w-full">
+            <Link
+              to="/signin"
+              onClick={() => setIsAuthModalOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+            >
+              <LogIn className="w-5 h-5" />
+              Sign In
+            </Link>
+            <Link
+              to="/signup"
+              onClick={() => setIsAuthModalOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            >
+              Sign Up
+            </Link>
+          </div>
         </div>
       </Modal>
     </header>
